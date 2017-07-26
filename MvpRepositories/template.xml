@@ -1,0 +1,20 @@
+<template format="4"
+		revision="1"
+		name="MVP Repositories"
+		description="Create a Repository class for MVP">
+
+	<category value="MVP"/>
+
+        <thumb>icon-app-bigger.png</thumb>
+
+	<parameter id="className"
+		name="Functionality Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="MvpFunction"
+		help="The Class Name of the MVP Repository"/>
+
+	<globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>

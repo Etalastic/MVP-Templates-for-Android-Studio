@@ -1,0 +1,34 @@
+<template format="4"
+		revision="1"
+		name="MVP Core Features"
+		description="Create MVP classes for a feature">
+
+	<category value="MVP"/>
+
+        <thumb>icon-app-bigger.png</thumb>
+
+	<parameter id="className"
+		name="Functionality Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="MvpFunction"
+		help="The feature class name."/>
+
+	<parameter
+            	id="useBaseClass"
+            	name="Include a base classes."
+	           type="boolean"
+	           default="false"
+	           help="Include base classes like BaseView, BasePresenter, BaseActivity and BaseFragment"/>
+
+	 <parameter
+            	id="useActivity"
+            	name="Include Activity class"
+            	type="boolean"
+            	default="false"
+            	help="Include Activity class in MVP feature"/>
+
+	<globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
