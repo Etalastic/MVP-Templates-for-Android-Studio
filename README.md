@@ -80,6 +80,15 @@ Copy all directories `MvpCoreFeatures` and `MvpRepositories` to
 
 - Go to File -> New -> MVP in Android Studio
 - or you can right click on any package, select new and choose the mvp template from there
-- Command + N from any package
+- (Command + N for Mac OS / Ctrl + N for Windows) from any package
 
 ![Accessing templates](screenshots/accessing-templates.png "Accessing templates")
+
+
+# Issues
+- The freemarker syntax ${packageName} will generate a package name from the selected cursor, 
+for the example :
+
+  if your app package is : ```com.domain.appname```, and your cursor / selected area in another sub package like          ```com.domain.appname.signup``` when accessing template, it will create ```com.domain.appname.signup``` if you call ${packageName}, it generate a wrong package path when importing something that in the root location. 
+  
+  So rather than make a package name automatically we leave some code like this: ```import yourpackagename.bases.BaseView;``` and just replace ```yourpackagename``` with your root package name.
