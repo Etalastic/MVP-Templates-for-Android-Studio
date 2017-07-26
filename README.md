@@ -87,7 +87,7 @@ Copy all directories `MvpCoreFeatures` and `MvpRepositories` to
 
 # Issues
 - The freemarker syntax ${packageName} will generate a package name from the selected cursor, 
-for the example :
+for the example:
 
   if your app package is : ```com.domain.appname```, and your cursor / selected area in another sub package like          ```com.domain.appname.signup``` when accessing template, it will create ```com.domain.appname.signup``` if you call ${packageName}, it generate a wrong package path when importing something that in the root location. 
   
