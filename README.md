@@ -91,4 +91,4 @@ for the example:
 
   if your app package is : ```com.domain.appname```, and your cursor / selected area in another sub package like          ```com.domain.appname.signup``` when accessing template, it will create ```com.domain.appname.signup``` if you call ${packageName}, it generate a wrong package path when importing something that in the root location. 
   
-  So rather than make a package name automatically we leave some code like this: ```import yourpackagename.bases.BaseView;``` and just replace ```yourpackagename``` with your root package name.
+  So rather than make a package name automatically, we were leaving some code like this: ```import yourpackagename.bases.BaseView;``` and just replace ```yourpackagename``` with your root package name.
