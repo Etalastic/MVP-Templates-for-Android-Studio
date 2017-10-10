@@ -2,33 +2,35 @@ package ${packageName}.${className?lower_case};
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import yourpackagename.R;
-import yourpackagename.bases.BaseActivity;
+import com.innovecto.etalastic.R;
+import com.innovecto.etalastic.revamp.helper.base.QsrAppCompactActivity;
 
-public class ${className}Activity extends BaseActivity {
+public class ${className}Activity extends QsrAppCompactActivity {
 
 @Override
   protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(null);
 
-    init();
-    initData();
-    initObjectListener();
+    init(savedInstanceState);
+    if (savedInstanceState == null) {
+      initData(savedInstanceState);
+    }
+    initObjectListener(savedInstanceState);
   }
 
   @Override
-  protected void init() {
+  protected void init(Bundle bundle) {
 
   }
 
   @Override
-  protected void initData() {
+  protected void initData(Bundle bundle) {
 
   }
 
   @Override
-  protected void initObjectListener() {
+  protected void initObjectListener(Bundle bundle) {
 
   }
 }
