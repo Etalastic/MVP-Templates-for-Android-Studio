@@ -1,5 +1,5 @@
 <template format="4"
-		revision="1"
+		revision="2"
 		name="MVP Core Features"
 		description="Create MVP classes for a feature">
 
@@ -14,19 +14,12 @@
 		default="MvpFunction"
 		help="The feature class name."/>
 
-	<parameter
-            	id="useBaseClass"
-            	name="Include a base classes."
-	           type="boolean"
-	           default="false"
-	           help="Include base classes like BaseView, BasePresenter, BaseActivity and BaseFragment"/>
-
 	 <parameter
-            	id="useActivity"
-            	name="Include Activity class"
-            	type="boolean"
-            	default="false"
-            	help="Include Activity class in MVP feature"/>
+    	id="useActivity"
+    	name="Include Activity class"
+    	type="boolean"
+    	default="false"
+    	help="Include Activity class in MVP feature"/>
 
 	<globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />

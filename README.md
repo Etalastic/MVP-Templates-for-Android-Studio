@@ -15,12 +15,8 @@ com.your.app      <- Cursor
     |   - FeatureNameActivity   <- Generated if include activity class checked
     |   - FeatureNameContract
     |   - FeatureNameFragment
+    |   - FeatureNameNullCheck
     |   - FeatureNamePresenter
-    +-- bases     <- Generated if include a base classes checked
-    |   - BaseActivity    
-    |   - BaseFragment   
-    |   - BasePresenter     
-    |   - BaseView    
 ```
 
 

@@ -1,16 +1,22 @@
 package ${packageName}.${className?lower_case};
 
-import yourpackagename.bases.BasePresenter;
-import yourpackagename.bases.BaseView;
+import com.innovecto.etalastic.bases.BaseView;
+import android.support.annotation.NonNull;
 
 public class ${className}Contract{
 	
-	interface View extends BaseView {
+	public interface View extends BaseView {
 		//this is sampe ui action
 		void showSampleUiAction(String data);
+
+		void showErrorMessage(@NonNull String message);
+    	
+    	void showLoadingDialogUi();
+
+    	void hideLoadingDialogUi();
 	}
 
-	interface Presenter extends BasePresenter<View> {
+	public interface Presenter  {
 		//this is sample process action 
 		void processSampleAction(String data);
 	}
