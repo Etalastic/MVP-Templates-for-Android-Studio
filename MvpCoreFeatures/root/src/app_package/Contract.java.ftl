@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 public class ${className}Contract{
 	
 	public interface View extends BaseView {
-		//this is sampe ui action
+		//this is sample ui action
 		void showSampleUiAction(String data);
 
 		void showErrorMessage(@NonNull String message);

@@ -18,7 +18,7 @@ public class ${className}Fragment extends QsrFragment<${className}Activity> impl
   @Override public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // Create the presenter with instance injection
-    presenter = ${className}Presenter.getInstance();
+    presenter = ${className}Presenter.newInstance();
   }
 
   @Nullable @Override public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
