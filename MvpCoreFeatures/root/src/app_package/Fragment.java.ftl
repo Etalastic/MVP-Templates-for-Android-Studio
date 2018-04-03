@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.innovecto.etalastic.revamp.helper.base.QsrFragment;
 import com.innovecto.etalastic.R;
-import com.innovecto.etalastic.revamp.helper.LoadingDialogUtils;
+import com.innovecto.etalastic.utils.helper.LoaderIndicatorHelper;
 import com.innovecto.etalastic.utils.alertdialog.GeneralPopUpDialogSingleButton;
 
 public class ${className}Fragment extends QsrFragment<${className}Activity> implements ${className}Contract.View {
@@ -68,13 +68,13 @@ public class ${className}Fragment extends QsrFragment<${className}Activity> impl
   @Override
   public void showLoadingDialogUi(){
     //show loading dialog ui
-    LoadingDialogUtils.getInstance().showDialog(getContext());
+    LoaderIndicatorHelper.getInstance().showDialog(getContext());
   }
 
   @Override
   public void hideLoadingDialogUi(){
     //dismiss loading dialog ui
-    LoadingDialogUtils.getInstance().dismissDialog();
+    LoaderIndicatorHelper.getInstance().dismissDialog();
   }
 
   @Override public void onDestroyView() {
