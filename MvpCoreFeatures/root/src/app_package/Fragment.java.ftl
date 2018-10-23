@@ -94,5 +94,3 @@ public class ${className}Fragment extends QsrFragment<${className}Activity> impl
   }
 
 }
-
-	

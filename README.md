@@ -46,7 +46,8 @@ Currently we are using this pattern to connect between mvp core class and reposi
                                                             \
                                                               -----> Remote
 ```
-
+# Download
+Download released project [here](https://github.com/QasirID/MVP-Templates-for-Android-Studio/releases).
 
 # Installation
 #### For Mac:
