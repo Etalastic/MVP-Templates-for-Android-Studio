@@ -13,10 +13,15 @@ The hierarchy of generated class:
 com.your.app      <- Cursor
     +-- featurename
     |   - FeatureNameActivity   <- Generated if include activity class checked
+    |   - FeatureNameBundle
+    |   - FeatureNameConstant
     |   - FeatureNameContract
     |   - FeatureNameFragment
     |   - FeatureNameNullCheck
     |   - FeatureNamePresenter
+    |   - FeatureNameRxModel
+    |   - FeatureNameRxValidation
+    |   - FeatureNameUiModel
 ```
 
 
