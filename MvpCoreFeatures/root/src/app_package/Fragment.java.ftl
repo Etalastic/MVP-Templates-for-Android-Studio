@@ -1,87 +1,96 @@
 package ${packageName}.${className?lower_case};
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.innovecto.etalastic.revamp.helper.base.QsrFragment;
-import com.innovecto.etalastic.R;
-import com.innovecto.etalastic.utils.helper.LoaderIndicatorHelper;
-import com.innovecto.etalastic.utils.alertdialog.GeneralPopUpDialogSingleButton;
+import com.jakewharton.rxbinding2.view.RxView;
+import com.jakewharton.rxbinding2.widget.RxTextView;
+import io.reactivex.Observable;
 
-public class ${className}Fragment extends QsrFragment<${className}Activity> implements ${className}Contract.View {
+public class ${className}Fragment extends QsrFragment<${className}Activity> implements
+    ${className}Contract.View {
 
   private ${className}Presenter presenter;
 
-  @Override public void onCreate(@Nullable Bundle savedInstanceState) {
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // Create the presenter with instance injection
     presenter = ${className}Presenter.newInstance();
   }
 
-  @Nullable @Override public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+  @Nullable
+  @Override
+  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(null, container, false);
     presenter.onAttachView(this);
     Bundle bundle = getArguments();
 
     init(view, bundle);
-    initData(view, bundle);
     initObjectListener(view, bundle);
+    initData(view, bundle);
 
     return view;
   }
 
-  @Override 
+  @Override
   public void init(View view, Bundle bundle) {
 
   }
 
-  @Override 
+  @Override
   public void initData(View view, Bundle bundle) {
-      presenter.processSampleAction("send the data to presenter");
+    presenter.bindData(bundle);
   }
 
-  @Override 
+  @Override
   public void initObjectListener(View view, Bundle bundle) {
 
   }
 
-  @Override 
-  public void showSampleUiAction(String data) {
-
+  @Override
+  public void bindDataToUi(@Nullable ${className}UiModel uiModel) {
+    // show your ui configuration
   }
 
   @Override
-  public void showErrorMessage(@NonNull String message){
-    new GeneralPopUpDialogSingleButton(message, getParentActivity(),
-        new GeneralPopUpDialogSingleButton.OnActionSelection() {
-          @Override
-          public void actionOk() {
-
-          }
-        });
+  public void showMessage(@NonNull String message) {
+    // show dialog
   }
-      
+
   @Override
-  public void showLoadingDialogUi(){
+  public void showLoadingDialogUi() {
     //show loading dialog ui
-    LoaderIndicatorHelper.getInstance().showDialog(getContext());
+
   }
 
   @Override
-  public void hideLoadingDialogUi(){
+  public void hideLoadingDialogUi() {
     //dismiss loading dialog ui
-    LoaderIndicatorHelper.getInstance().dismissDialog();
+
   }
 
-  @Override public void onDestroyView() {
+  @Override
+  public Observable<Object> buttonObservable() {
+    // button widget
+    return RxView.clicks(null);
+  }
+
+  @Override
+  public Observable<CharSequence> inputProductObservable() {
+    // textview widget
+    return RxTextView.textChanges(null).skipInitialValue();
+  }
+
+  @Override
+  public void onDestroyView() {
     presenter.onDetachView();
     super.onDestroyView();
   }
 
 }
-
-	

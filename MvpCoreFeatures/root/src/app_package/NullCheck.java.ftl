@@ -1,8 +1,10 @@
 package ${packageName}.${className?lower_case};
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.innovecto.etalastic.revamp.helper.base.BasePresenter;
 import ${packageName}.${className?lower_case}.${className}Contract.View;
+import io.reactivex.Observable;
 
 
 public class ${className}NullCheck extends BasePresenter<${className}Contract.View> {
@@ -12,12 +14,12 @@ public class ${className}NullCheck extends BasePresenter<${className}Contract.Vi
     return new View() {
 
       @Override
-      public void showSampleUiAction(String data) {
-        
+      public void showMessage(@NonNull String message) {
+
       }
 
       @Override
-      public void showErrorMessage(@NonNull String message) {
+      public void bindDataToUi(@Nullable ${className}UiModel uiModel) {
 
       }
 
@@ -31,6 +33,15 @@ public class ${className}NullCheck extends BasePresenter<${className}Contract.Vi
 
       }
 
+      @Override
+      public Observable<Object> buttonObservable() {
+        return null;
+      }
+
+      @Override
+      public Observable<CharSequence> inputProductObservable() {
+        return null;
+      }
     };
   }
 }

@@ -1,23 +1,38 @@
 package ${packageName}.${className?lower_case};
 
+import android.os.Bundle;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.innovecto.etalastic.bases.BaseView;
-import android.support.annotation.NonNull;
+import io.reactivex.Observable;
+import io.reactivex.functions.Consumer;
 
-public class ${className}Contract{
-	
-	public interface View extends BaseView {
-		//this is sample ui action
-		void showSampleUiAction(String data);
+public class ${className}Contract {
 
-		void showErrorMessage(@NonNull String message);
-    	
-    	void showLoadingDialogUi();
+  public interface View extends BaseView {
 
-    	void hideLoadingDialogUi();
-	}
+    void showMessage(@NonNull String message);
 
-	public interface Presenter  {
-		//this is sample process action 
-		void processSampleAction(String data);
-	}
+    void showLoadingDialogUi();
+
+    void hideLoadingDialogUi();
+
+    void bindDataToUi(@Nullable ${className}UiModel uiModel);
+
+    Observable<Object> buttonObservable();
+
+    Observable<CharSequence> inputProductObservable();
+
+  }
+
+  public interface Presenter {
+
+    void bindData(@NonNull Bundle bundle);
+
+    void initValidation();
+
+    Consumer<Object> buttonConsumer();
+
+    Consumer<${className}RxModel> inputProductConsumer();
+  }
 }
